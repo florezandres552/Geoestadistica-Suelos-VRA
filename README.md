@@ -1,27 +1,30 @@
-# Análisis Geoestadístico para Manejo de Suelos
+# Análisis Geoestadístico para Agricultura de Precisión
 
 ## Resumen del Proyecto
-Este proyecto utiliza técnicas de **Ciencia de Datos** para analizar la variabilidad del pH y nutrientes en un cultivo de 62 bloques. El objetivo es transitar de un manejo de "promedios" a un manejo de **Precisión**, aplicando insumos solo donde el suelo lo requiere.
+Este proyecto implementa un modelo de análisis de datos para monitorear la salud del suelo en un cultivo de alta densidad (62 bloques). El análisis combina **estadística inferencial** y **visualización geoespacial** para optimizar la aplicación de fertilizantes y enmiendas, reduciendo el impacto ambiental y aumentando la eficiencia económica.
+
+## Impacto del Análisis
+* **Diagnóstico de Nutrientes:** Se identificó una dinámica no lineal de Nitratos con una tendencia de agotamiento crítico al cierre de 2024.
+* **Optimización de Recursos:** El análisis espacial permite pasar de una fertilización uniforme a una de **Tasa Variable (VRA)**.
+* **Validación Científica:** Uso de pruebas de normalidad (Shapiro-Wilk) y comparativas (ANOVA) para asegurar que las decisiones agronómicas no sean producto del azar.
 
 ## Stack Tecnológico
-* **Python** (Pandas, Numpy)
-* **Visualización:** Seaborn & Matplotlib (Heatmaps espaciales)
-* **Estadística Inferencial:** Scipy (Pruebas ANOVA y Shapiro-Wilk)
+* **Lenguaje:** Python 3.x
+* **Librerías:** Pandas, Numpy, Matplotlib, Seaborn.
+* **Estadística:** Scipy (ANOVA, Shapiro-Wilk, Pearson).
 
-## Visualización de Resultados
+## Visualizaciones Incluidas
+* **Heatmap Espacial:** Localización exacta de zonas ácidas que requieren intervención.
+* **Tendencia No Lineal:** Gráfico de series de tiempo que muestra las fluctuaciones reales de nitratos (incluyendo periodos de agotamiento y recuperación).
+* **Análisis de Variabilidad:** Boxplots interanuales para medir la estabilidad del pH.
 
-Para este análisis, se implementaron cuatro visualizaciones clave que permiten tomar decisiones agronómicas basadas en datos:
+<img width="1589" height="1189" alt="Graficos_suelos" src="https://github.com/user-attachments/assets/113e33fe-bc78-48ad-956e-d8ecde8282d3" />
 
-<img width="1489" height="1190" alt="Graficos_suelos" src="https://github.com/user-attachments/assets/994595b3-867b-4bcf-8149-750e9b4979f9" />
 
-1. **Mapa de Calor Espacial (Precision Agriculture):** Representa la distribución real del pH en el campo. Las zonas en rojo indican niveles críticos de acidez que requieren enmiendas inmediatas.
-2. **Dinámica Temporal de Nutrientes:** Un gráfico de líneas que muestra la fluctuación de Nitratos por bloque a lo largo de 5 años, resaltando el promedio general para identificar desviaciones.
-3. **Distribución por Año (Boxplots):** Utilizado para validar visualmente el test ANOVA, demostrando la estabilidad del suelo en el tiempo.
-4. **Matriz de Correlación:** Permite entender la relación entre el pH, la conductividad y los nitratos para evitar efectos antagónicos durante la fertilización.
+## Recomendaciones Estratégicas
+1. **Encalado Selectivo:** Aplicación de Carbonato de Calcio únicamente en bloques identificados con pH < 5.8 (Zonas rojas del Heatmap), estimando un ahorro del **18% en costos de insumos**.
+2. **Reposición de Nitrógeno:** El modelo detectó un "gap" de nutrientes en 2023-2024. Se recomienda un ajuste del **+15% en el plan de fertilización nitrogenada** para recuperar la fertilidad del suelo en el próximo ciclo.
+3. **Monitoreo de Precisión:** Sustituir el muestreo general por un monitoreo intensificado en los bloques con mayor volatilidad de nutrientes detectada por el modelo.
 
-## Hallazgos Críticos
-* **Estabilidad:** El test ANOVA (p > 0.05) confirmó que el pH no ha sufrido degradación significativa en 5 años.
-* **Heterogeneidad:** El mapa de calor identificó sectores con pH < 5.5 que requieren intervención inmediata, mientras el 70% del cultivo está en rangos óptimos.
-
-## Recomendación Agronómica
-Implementar un plan de **Encalado Variable**. Basado en los mapas de calor, se estima un ahorro del **18% en carbonato de calcio** al evitar aplicaciones en bloques neutros/alcalinos.
+## Autor
+**Andres Florez** *Ingeniero Agrícola | Data Analyst* [LinkedIn](linkedin.com/in/andres-florez-agtech)
